@@ -28,7 +28,9 @@ func test(b *testing.B) {
 	//假设值都为1，这里只赋值3个
 	var arr = [2 * 1e7]int{1, 1, 1}
 
-	for i, n := range arr { //可改成取值&arr或切片arr[0:3]
+	for i, n := range arr {
+		//可改成取值&arr或
+		// 切片arr[:]切片结构体指针类型，指向原底层数组，返回一个新的指针
 		_ = i
 		_ = n
 	}

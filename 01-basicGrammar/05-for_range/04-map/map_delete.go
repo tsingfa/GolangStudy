@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	var m = map[int]int{1: 1, 2: 2, 3: 3} //only del key once, and not del the current iteration key
+	var m = map[int]int{1: 1, 2: 2, 3: 3}
+	//only del key once, and not del the current iteration key
 	var once sync.Once
 	for i := range m {
 		once.Do(func() {
@@ -20,6 +21,6 @@ func main() {
 				}
 			}
 		})
-		fmt.Printf("%d%d\n", i, m[i])
+		fmt.Printf("%d,%d\n", i, m[i])
 	}
 }
