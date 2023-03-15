@@ -20,11 +20,13 @@ func main() {
 	fmt.Printf("第 3 行 - c 变量类型为 = %T\n", c)
 
 	/*  & 和 * 运算符实例 */
-	ptr = &a                                    /* 'ptr' 包含了 'a' 变量的地址 */
-	fmt.Printf("%-7s:%v\n", "a", a)             //4
-	fmt.Printf("%-7s:%v\n", "&a", &a)           //0xc00000e0b8
+	ptr = &a                          /* 'ptr' 包含了 'a' 变量的地址 */
+	fmt.Printf("%-7s:%v\n", "a", a)   //4
+	fmt.Printf("%-7s:%v\n", "&a", &a) //0xc00000e0b8
+	//fmt.Printf("%-7s:%v\n", "*a", *a)		//对该变量的间接引用无效
 	fmt.Printf("%-7s:%v\n", "*(&a)", *(&a))     //4
-	fmt.Printf("%-7s:%v\n", "ptr", ptr)         //0xc00000e0b8
+	fmt.Printf("%-7s:%v\n", "ptr", ptr)         //0xc00000e0b8	//指针指向的地址
+	fmt.Printf("%-7s:%v\n", "&ptr", &ptr)       //0xc00000a028	//指针本身的地址
 	fmt.Printf("%-7s:%v\n", "*ptr", *ptr)       //4
 	fmt.Printf("%-7s:%v\n", "&(*ptr)", &(*ptr)) //0xc00000e0b8
 }
